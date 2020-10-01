@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735172525CD86007945C2 /* AppDelegate.swift */; };
+		F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735192525CD86007945C2 /* SceneDelegate.swift */; };
+		F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7351B2525CD86007945C2 /* ViewController.swift */; };
+		F9C7351F2525CD86007945C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C7351D2525CD86007945C2 /* Main.storyboard */; };
+		F9C735212525CD8A007945C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C735202525CD8A007945C2 /* Assets.xcassets */; };
+		F9C735242525CD8A007945C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */; };
+		F9C7352F2525CD8B007945C2 /* MoriningTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7352E2525CD8B007945C2 /* MoriningTimerTests.swift */; };
+		F9C7353A2525CD8B007945C2 /* MoriningTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9C7352B2525CD8B007945C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9C7350C2525CD86007945C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9C735132525CD86007945C2;
+			remoteInfo = MoriningTimer;
+		};
+		F9C735362525CD8B007945C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9C7350C2525CD86007945C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9C735132525CD86007945C2;
+			remoteInfo = MoriningTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F9C735142525CD86007945C2 /* MoriningTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoriningTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C735172525CD86007945C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9C735192525CD86007945C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F9C7351B2525CD86007945C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9C7351E2525CD86007945C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9C735202525CD8A007945C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9C735232525CD8A007945C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9C735252525CD8A007945C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C7352A2525CD8B007945C2 /* MoriningTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoriningTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C7352E2525CD8B007945C2 /* MoriningTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoriningTimerTests.swift; sourceTree = "<group>"; };
+		F9C735302525CD8B007945C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C735352525CD8B007945C2 /* MoriningTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoriningTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoriningTimerUITests.swift; sourceTree = "<group>"; };
+		F9C7353B2525CD8B007945C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9C735112525CD86007945C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735272525CD8B007945C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735322525CD8B007945C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9C7350B2525CD86007945C2 = {
+			isa = PBXGroup;
+			children = (
+				F9C735162525CD86007945C2 /* MoriningTimer */,
+				F9C7352D2525CD8B007945C2 /* MoriningTimerTests */,
+				F9C735382525CD8B007945C2 /* MoriningTimerUITests */,
+				F9C735152525CD86007945C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9C735152525CD86007945C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9C735142525CD86007945C2 /* MoriningTimer.app */,
+				F9C7352A2525CD8B007945C2 /* MoriningTimerTests.xctest */,
+				F9C735352525CD8B007945C2 /* MoriningTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9C735162525CD86007945C2 /* MoriningTimer */ = {
+			isa = PBXGroup;
+			children = (
+				F9C735172525CD86007945C2 /* AppDelegate.swift */,
+				F9C735192525CD86007945C2 /* SceneDelegate.swift */,
+				F9C7351B2525CD86007945C2 /* ViewController.swift */,
+				F9C7351D2525CD86007945C2 /* Main.storyboard */,
+				F9C735202525CD8A007945C2 /* Assets.xcassets */,
+				F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */,
+				F9C735252525CD8A007945C2 /* Info.plist */,
+			);
+			path = MoriningTimer;
+			sourceTree = "<group>";
+		};
+		F9C7352D2525CD8B007945C2 /* MoriningTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9C7352E2525CD8B007945C2 /* MoriningTimerTests.swift */,
+				F9C735302525CD8B007945C2 /* Info.plist */,
+			);
+			path = MoriningTimerTests;
+			sourceTree = "<group>";
+		};
+		F9C735382525CD8B007945C2 /* MoriningTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */,
+				F9C7353B2525CD8B007945C2 /* Info.plist */,
+			);
+			path = MoriningTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9C735132525CD86007945C2 /* MoriningTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C7353E2525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimer" */;
+			buildPhases = (
+				F9C735102525CD86007945C2 /* Sources */,
+				F9C735112525CD86007945C2 /* Frameworks */,
+				F9C735122525CD86007945C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoriningTimer;
+			productName = MoriningTimer;
+			productReference = F9C735142525CD86007945C2 /* MoriningTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9C735292525CD8B007945C2 /* MoriningTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C735412525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerTests" */;
+			buildPhases = (
+				F9C735262525CD8B007945C2 /* Sources */,
+				F9C735272525CD8B007945C2 /* Frameworks */,
+				F9C735282525CD8B007945C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9C7352C2525CD8B007945C2 /* PBXTargetDependency */,
+			);
+			name = MoriningTimerTests;
+			productName = MoriningTimerTests;
+			productReference = F9C7352A2525CD8B007945C2 /* MoriningTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F9C735342525CD8B007945C2 /* MoriningTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C735442525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerUITests" */;
+			buildPhases = (
+				F9C735312525CD8B007945C2 /* Sources */,
+				F9C735322525CD8B007945C2 /* Frameworks */,
+				F9C735332525CD8B007945C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9C735372525CD8B007945C2 /* PBXTargetDependency */,
+			);
+			name = MoriningTimerUITests;
+			productName = MoriningTimerUITests;
+			productReference = F9C735352525CD8B007945C2 /* MoriningTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9C7350C2525CD86007945C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					F9C735132525CD86007945C2 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					F9C735292525CD8B007945C2 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = F9C735132525CD86007945C2;
+					};
+					F9C735342525CD8B007945C2 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = F9C735132525CD86007945C2;
+					};
+				};
+			};
+			buildConfigurationList = F9C7350F2525CD86007945C2 /* Build configuration list for PBXProject "MoriningTimer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9C7350B2525CD86007945C2;
+			productRefGroup = F9C735152525CD86007945C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9C735132525CD86007945C2 /* MoriningTimer */,
+				F9C735292525CD8B007945C2 /* MoriningTimerTests */,
+				F9C735342525CD8B007945C2 /* MoriningTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9C735122525CD86007945C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C735242525CD8A007945C2 /* LaunchScreen.storyboard in Resources */,
+				F9C735212525CD8A007945C2 /* Assets.xcassets in Resources */,
+				F9C7351F2525CD86007945C2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735282525CD8B007945C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735332525CD8B007945C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9C735102525CD86007945C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */,
+				F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */,
+				F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735262525CD8B007945C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C7352F2525CD8B007945C2 /* MoriningTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C735312525CD8B007945C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C7353A2525CD8B007945C2 /* MoriningTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9C7352C2525CD8B007945C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9C735132525CD86007945C2 /* MoriningTimer */;
+			targetProxy = F9C7352B2525CD8B007945C2 /* PBXContainerItemProxy */;
+		};
+		F9C735372525CD8B007945C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9C735132525CD86007945C2 /* MoriningTimer */;
+			targetProxy = F9C735362525CD8B007945C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F9C7351D2525CD86007945C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C7351E2525CD86007945C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9C735232525CD8A007945C2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9C7353C2525CD8B007945C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F9C7353D2525CD8B007945C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9C7353F2525CD8B007945C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9C735402525CD8B007945C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F9C735422525CD8B007945C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoriningTimer.app/MoriningTimer";
+			};
+			name = Debug;
+		};
+		F9C735432525CD8B007945C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoriningTimer.app/MoriningTimer";
+			};
+			name = Release;
+		};
+		F9C735452525CD8B007945C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoriningTimer;
+			};
+			name = Debug;
+		};
+		F9C735462525CD8B007945C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F9X9VCT8TE;
+				INFOPLIST_FILE = MoriningTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.kihomori.morita.MoriningTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoriningTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9C7350F2525CD86007945C2 /* Build configuration list for PBXProject "MoriningTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C7353C2525CD8B007945C2 /* Debug */,
+				F9C7353D2525CD8B007945C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9C7353E2525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C7353F2525CD8B007945C2 /* Debug */,
+				F9C735402525CD8B007945C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9C735412525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C735422525CD8B007945C2 /* Debug */,
+				F9C735432525CD8B007945C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9C735442525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C735452525CD8B007945C2 /* Debug */,
+				F9C735462525CD8B007945C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9C7350C2525CD86007945C2 /* Project object */;
+}
