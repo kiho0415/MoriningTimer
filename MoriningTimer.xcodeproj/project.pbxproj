@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD45097EA2331C0D6B13FFBB /* Pods_MoriningTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E1FD7AA1CCE855F2F9259F /* Pods_MoriningTimer.framework */; };
+		E48A558CFDCE525BF0C9F6C0 /* Pods_MoriningTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */; };
+		F6D5F68279A0740DB99496E9 /* Pods_MoriningTimer_MoriningTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */; };
 		F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735172525CD86007945C2 /* AppDelegate.swift */; };
 		F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735192525CD86007945C2 /* SceneDelegate.swift */; };
 		F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7351B2525CD86007945C2 /* ViewController.swift */; };
@@ -15,6 +18,10 @@
 		F9C735242525CD8A007945C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */; };
 		F9C7352F2525CD8B007945C2 /* MoriningTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7352E2525CD8B007945C2 /* MoriningTimerTests.swift */; };
 		F9C7353A2525CD8B007945C2 /* MoriningTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */; };
+		F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735552526F6F5007945C2 /* TimerViewController.swift */; };
+		F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */; };
+		F9C7356E25270303007945C2 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7356D25270303007945C2 /* TimerCell.swift */; };
+		F9C735732527031D007945C2 /* TimeSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735722527031D007945C2 /* TimeSetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40E1FD7AA1CCE855F2F9259F /* Pods_MoriningTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoriningTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoriningTimer_MoriningTimerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77945BDBEF5D7DAC3F4E41D8 /* Pods-MoriningTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer.debug.xcconfig"; path = "Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		97E75D615C5DF32515E5DDD6 /* Pods-MoriningTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimerTests.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimerTests/Pods-MoriningTimerTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoriningTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C447CAAC76C5C15B9BACBED1 /* Pods-MoriningTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer.release.xcconfig"; sourceTree = "<group>"; };
+		E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F9C735142525CD86007945C2 /* MoriningTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoriningTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C735172525CD86007945C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C735192525CD86007945C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +63,12 @@
 		F9C735352525CD8B007945C2 /* MoriningTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoriningTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoriningTimerUITests.swift; sourceTree = "<group>"; };
 		F9C7353B2525CD8B007945C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C735552526F6F5007945C2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetViewController.swift; sourceTree = "<group>"; };
+		F9C7356D25270303007945C2 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		F9C735722527031D007945C2 /* TimeSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetCell.swift; sourceTree = "<group>"; };
+		FC1BF5818F6E4028B9301DEC /* Pods-MoriningTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoriningTimerTests/Pods-MoriningTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD85214881D7A64F7039C281 /* Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD45097EA2331C0D6B13FFBB /* Pods_MoriningTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48A558CFDCE525BF0C9F6C0 /* Pods_MoriningTimerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D5F68279A0740DB99496E9 /* Pods_MoriningTimer_MoriningTimerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F58EB8986B901D686D187D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40E1FD7AA1CCE855F2F9259F /* Pods_MoriningTimer.framework */,
+				5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */,
+				9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDD94271F836740F21A64D42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77945BDBEF5D7DAC3F4E41D8 /* Pods-MoriningTimer.debug.xcconfig */,
+				C447CAAC76C5C15B9BACBED1 /* Pods-MoriningTimer.release.xcconfig */,
+				FD85214881D7A64F7039C281 /* Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig */,
+				E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */,
+				FC1BF5818F6E4028B9301DEC /* Pods-MoriningTimerTests.debug.xcconfig */,
+				97E75D615C5DF32515E5DDD6 /* Pods-MoriningTimerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F9C7350B2525CD86007945C2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +129,8 @@
 				F9C7352D2525CD8B007945C2 /* MoriningTimerTests */,
 				F9C735382525CD8B007945C2 /* MoriningTimerUITests */,
 				F9C735152525CD86007945C2 /* Products */,
+				DDD94271F836740F21A64D42 /* Pods */,
+				00F58EB8986B901D686D187D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +150,10 @@
 				F9C735172525CD86007945C2 /* AppDelegate.swift */,
 				F9C735192525CD86007945C2 /* SceneDelegate.swift */,
 				F9C7351B2525CD86007945C2 /* ViewController.swift */,
+				F9C735552526F6F5007945C2 /* TimerViewController.swift */,
+				F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */,
+				F9C7356D25270303007945C2 /* TimerCell.swift */,
+				F9C735722527031D007945C2 /* TimeSetCell.swift */,
 				F9C7351D2525CD86007945C2 /* Main.storyboard */,
 				F9C735202525CD8A007945C2 /* Assets.xcassets */,
 				F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */,
@@ -135,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9C7353E2525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimer" */;
 			buildPhases = (
+				A7DB966B400573A1D1192F26 /* [CP] Check Pods Manifest.lock */,
 				F9C735102525CD86007945C2 /* Sources */,
 				F9C735112525CD86007945C2 /* Frameworks */,
 				F9C735122525CD86007945C2 /* Resources */,
+				E901C1E346EDF64357C8D7FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9C735412525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerTests" */;
 			buildPhases = (
+				2A03C763587F000BAB6EB7B8 /* [CP] Check Pods Manifest.lock */,
 				F9C735262525CD8B007945C2 /* Sources */,
 				F9C735272525CD8B007945C2 /* Frameworks */,
 				F9C735282525CD8B007945C2 /* Resources */,
@@ -170,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9C735442525CD8B007945C2 /* Build configuration list for PBXNativeTarget "MoriningTimerUITests" */;
 			buildPhases = (
+				591E5BB3128C426A7EDF1D7B /* [CP] Check Pods Manifest.lock */,
 				F9C735312525CD8B007945C2 /* Sources */,
 				F9C735322525CD8B007945C2 /* Frameworks */,
 				F9C735332525CD8B007945C2 /* Resources */,
+				99FEFA5ADC803468CF88F381 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +310,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A03C763587F000BAB6EB7B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoriningTimerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		591E5BB3128C426A7EDF1D7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoriningTimer-MoriningTimerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99FEFA5ADC803468CF88F381 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7DB966B400573A1D1192F26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoriningTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E901C1E346EDF64357C8D7FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F9C735102525CD86007945C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */,
+				F9C735732527031D007945C2 /* TimeSetCell.swift in Sources */,
 				F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */,
 				F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */,
+				F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */,
 				F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */,
+				F9C7356E25270303007945C2 /* TimerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +597,7 @@
 		};
 		F9C7353F2525CD8B007945C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77945BDBEF5D7DAC3F4E41D8 /* Pods-MoriningTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +617,7 @@
 		};
 		F9C735402525CD8B007945C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C447CAAC76C5C15B9BACBED1 /* Pods-MoriningTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +637,7 @@
 		};
 		F9C735422525CD8B007945C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC1BF5818F6E4028B9301DEC /* Pods-MoriningTimerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +660,7 @@
 		};
 		F9C735432525CD8B007945C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E75D615C5DF32515E5DDD6 /* Pods-MoriningTimerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +683,7 @@
 		};
 		F9C735452525CD8B007945C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD85214881D7A64F7039C281 /* Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +704,7 @@
 		};
 		F9C735462525CD8B007945C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

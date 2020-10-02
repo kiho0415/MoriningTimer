@@ -1,0 +1,6 @@
+framework module Pods_MoriningTimerTests {
+  umbrella header "Pods-MoriningTimerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
