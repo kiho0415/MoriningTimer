@@ -11,6 +11,5 @@ import UIKit
 class TimeSetCell: UITableViewCell{
     @IBOutlet var numberLabel: UILabel!
     @IBOutlet var contentTextField: UITextField!
-    @IBOutlet var minuteLabel:UILabel!
-    @IBOutlet var secondLabel:UILabel!
+    @IBOutlet var timeLabel:UILabel!
 }

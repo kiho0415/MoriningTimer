@@ -12,10 +12,8 @@ class TimerViewController: UIViewController,UITableViewDataSource {
     
     @IBOutlet var table: UITableView!
     @IBOutlet var readyContentLabel: UILabel!
-    @IBOutlet var tillEndMinuteLabel: UILabel!
-    @IBOutlet var tillEndSecondLabel: UILabel!
-    @IBOutlet var tillArriveMinuteLabel: UILabel!
-    @IBOutlet var tillArriveSecondLabel: UILabel!
+    @IBOutlet var tillEndLabel: UILabel!
+    @IBOutlet var tillArriveLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
