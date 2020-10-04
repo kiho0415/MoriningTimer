@@ -176,50 +176,13 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="511"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeSetCell" id="SoP-kU-gZ9" customClass="TimeSetCell" customModule="MoriningTimer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SoP-kU-gZ9" id="yc4-la-QTT" customClass="TimeSetCell" customModule="MoriningTimer" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="準備1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9I-Gb-RJ0">
-                                                    <rect key="frame" x="28" y="11" width="43" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-lp-E2c">
-                                                    <rect key="frame" x="104" y="4" width="97" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSw-H7-FTc">
-                                                    <rect key="frame" x="306" y="11" width="40" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <connections>
-                                                <outlet property="contentTextField" destination="0oI-lp-E2c" id="Rsd-B3-Erv"/>
-                                                <outlet property="numberLabel" destination="q9I-Gb-RJ0" id="kvI-Yn-L2q"/>
-                                                <outlet property="timeLabel" destination="gSw-H7-FTc" id="ekj-vF-rfW"/>
-                                            </connections>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvv-8f-5Yz">
-                                <rect key="frame" x="91" y="694" width="62" height="30"/>
+                                <rect key="frame" x="93" y="694" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ストップ"/>
+                                <state key="normal" title="スタート"/>
                                 <connections>
-                                    <action selector="stop" destination="0Sl-p0-sb1" eventType="touchUpInside" id="AHW-K3-O2J"/>
+                                    <action selector="start" destination="0Sl-p0-sb1" eventType="touchUpInside" id="ux9-uF-Xy5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcC-v8-v2V">
@@ -243,9 +206,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="測定" id="v7Z-9h-rgD">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="gEO-jz-YbD"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="gEO-jz-YbD">
+                            <connections>
+                                <action selector="save" destination="0Sl-p0-sb1" id="0eO-gF-oaY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="startButton" destination="Kvv-8f-5Yz" id="ZRb-JX-RNr"/>
                         <outlet property="table" destination="guJ-lb-a2D" id="CFt-cc-mBk"/>
                     </connections>
                 </viewController>

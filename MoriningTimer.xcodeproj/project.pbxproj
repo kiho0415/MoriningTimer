@@ -21,7 +21,9 @@
 		F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735552526F6F5007945C2 /* TimerViewController.swift */; };
 		F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */; };
 		F9C7356E25270303007945C2 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7356D25270303007945C2 /* TimerCell.swift */; };
-		F9C735732527031D007945C2 /* TimeSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735722527031D007945C2 /* TimeSetCell.swift */; };
+		F9C7358A2529C28C007945C2 /* TimerSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735892529C28C007945C2 /* TimerSetData.swift */; };
+		F9C73597252A372D007945C2 /* TimeSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C73595252A372D007945C2 /* TimeSetCell.swift */; };
+		F9C73598252A372D007945C2 /* TimeSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C73596252A372D007945C2 /* TimeSetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,9 @@
 		F9C735552526F6F5007945C2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetViewController.swift; sourceTree = "<group>"; };
 		F9C7356D25270303007945C2 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
-		F9C735722527031D007945C2 /* TimeSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetCell.swift; sourceTree = "<group>"; };
+		F9C735892529C28C007945C2 /* TimerSetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetData.swift; sourceTree = "<group>"; };
+		F9C73595252A372D007945C2 /* TimeSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetCell.swift; sourceTree = "<group>"; };
+		F9C73596252A372D007945C2 /* TimeSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSetCell.xib; sourceTree = "<group>"; };
 		FC1BF5818F6E4028B9301DEC /* Pods-MoriningTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-MoriningTimerTests/Pods-MoriningTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD85214881D7A64F7039C281 /* Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,11 +157,13 @@
 				F9C735552526F6F5007945C2 /* TimerViewController.swift */,
 				F9C7356D25270303007945C2 /* TimerCell.swift */,
 				F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */,
-				F9C735722527031D007945C2 /* TimeSetCell.swift */,
+				F9C73595252A372D007945C2 /* TimeSetCell.swift */,
+				F9C73596252A372D007945C2 /* TimeSetCell.xib */,
 				F9C7351D2525CD86007945C2 /* Main.storyboard */,
 				F9C735202525CD8A007945C2 /* Assets.xcassets */,
 				F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */,
 				F9C735252525CD8A007945C2 /* Info.plist */,
+				F9C735892529C28C007945C2 /* TimerSetData.swift */,
 			);
 			path = MoriningTimer;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				F9C735242525CD8A007945C2 /* LaunchScreen.storyboard in Resources */,
 				F9C735212525CD8A007945C2 /* Assets.xcassets in Resources */,
 				F9C7351F2525CD86007945C2 /* Main.storyboard in Resources */,
+				F9C73598252A372D007945C2 /* TimeSetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,12 +426,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */,
-				F9C735732527031D007945C2 /* TimeSetCell.swift in Sources */,
 				F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */,
 				F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */,
+				F9C7358A2529C28C007945C2 /* TimerSetData.swift in Sources */,
 				F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */,
 				F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */,
 				F9C7356E25270303007945C2 /* TimerCell.swift in Sources */,
+				F9C73597252A372D007945C2 /* TimeSetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
