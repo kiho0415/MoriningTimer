@@ -17,9 +17,11 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     var timeCountNumber: Int = 0
     var timer: Timer = Timer()
     var changedtime = String()
+    var readynumber = Int()
+    var todocontent = String()
     
     var orderarray = [String]()
-    var contentarray = [String]()
+    var todoarray = [String]()
     var timearray = [String]()
     //    let realm = try! Realm()
     
@@ -34,20 +36,22 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return orderarray.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeSetCell", for: indexPath) as! TimeSetCell
-        let readynumber = indexPath.row + 1
-        cell.orderLabel.text = "準備\(readynumber)"
-        cell.timeLabel.text = changedtime
+        readynumber = indexPath.row + 1
+        todocontent = cell.contentTextField.text!
+        if indexPath.row != orderarray.count{//最後以外のcell
+            cell.orderLabel.text = orderarray[indexPath.row]
+        }else{//最後のcell
+            cell.orderLabel.text = "準備\(readynumber)"
+            cell.timeLabel.text = changedtime
+        }
         
-        //        orderarray.append((cell?.orderLabel?.text)!)
-        //        contentarray.append((cell?.contentTextField?.text)!)
-        
+
         return cell
-        
     }
     
     func startTimer() {
@@ -67,7 +71,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         let minute = (timeCountNumber - second) / 60
         changedtime = String(format: "%02d:%02d", minute,second)
         self.table.reloadData()
-        print(changedtime)
+//        print(changedtime)
     }
     
     @IBAction func start(){
@@ -81,15 +85,35 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     @IBAction func reset(){
+        if timer.isValid && orderarray != []{ //一番初めのセルで計測中にリセット
+            
+            
+        }
         timer.invalidate()
         timeCountNumber =  0
+        if orderarray != []{
+            orderarray.removeLast()
+//            todoarray.remove(at: readynumber - 1)
+            timearray.removeLast()
+            print("resetおすと\(orderarray),\(todoarray),\(timearray)")
+        }
     }
     
     @IBAction func next(){
-        //このボタンを押すごとに要素を配列に追加してそれをtableviewで表示
-        //next押したら配列に追加してlabelには配列のindexpath.rowばん目を表示させる。一つ前のせるのlabelはもうそれで固定する= 最新のセルだけ更新するとか？
-        timearray.append(changedtime)
-        
+        if timer.isValid{//動いていたら
+            orderarray.append("準備\(readynumber)")
+    //        todoarray.append(todocontent)
+            timearray.append(changedtime)
+            timeCountNumber =  0
+        }else{//止まっていたら
+            orderarray.append("準備\(readynumber)")
+    //        todoarray.append(todocontent)
+            timearray.append(changedtime)
+            timeCountNumber =  0
+            startTimer()
+        }
+
+        print("nextおすと\(orderarray),\(todoarray),\(timearray)")
     }
     
     @IBAction func save(){
