@@ -85,36 +85,42 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     @IBAction func reset(){
-        if timer.isValid && orderarray != []{ //一番初めのセルで計測中にリセット
-            
-            
+        if timer.isValid {//計測中
+                timer.invalidate()
+                timeCountNumber =  0
+                ///ここでタイマーの数字変わるようにしたい
+        } else {//タイマー止まってるとき
+            if orderarray == [] {//スタートの前にリセットを押す
+                ///何もしない
+            } else {//2番目以降のセル：この時は動いているセルのデータが配列に保存されていないので配列の最後を削除しなくて良い
+                timeCountNumber = 0
+            }
         }
-        timer.invalidate()
-        timeCountNumber =  0
-        if orderarray != []{
-            orderarray.removeLast()
-//            todoarray.remove(at: readynumber - 1)
-            timearray.removeLast()
-            print("resetおすと\(orderarray),\(todoarray),\(timearray)")
-        }
+        self.table.reloadData()
+        print("resetおすと\(orderarray),\(todoarray),\(timearray)")
     }
     
     @IBAction func next(){
-        if timer.isValid{//動いていたら
+        if timer.isValid {//計測中に次へ
             orderarray.append("準備\(readynumber)")
-    //        todoarray.append(todocontent)
+//          todoarray.append(todocontent)
             timearray.append(changedtime)
             timeCountNumber =  0
-        }else{//止まっていたら
-            orderarray.append("準備\(readynumber)")
-    //        todoarray.append(todocontent)
-            timearray.append(changedtime)
-            timeCountNumber =  0
-            startTimer()
+        } else {//タイマー止まってるときに次へ
+            if orderarray == [] {//スタートの前にリセットを押す
+                ///何もしない
+            } else {
+                orderarray.append("準備\(readynumber)")
+//              todoarray.append(todocontent)
+                timearray.append(changedtime)
+                timeCountNumber =  0
+                startTimer()
+            }
         }
-
+        self.table.reloadData()
         print("nextおすと\(orderarray),\(todoarray),\(timearray)")
     }
+
     
     @IBAction func save(){
         //        let updatetimersetdata = TimerSetData()
