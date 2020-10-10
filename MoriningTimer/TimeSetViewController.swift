@@ -20,10 +20,12 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     var readynumber = Int()
     var todocontent = String()
     
-    var orderarray = [String]()
-    var todoarray = [String]()
-    var timearray = [String]()
-    //    let realm = try! Realm()
+    var orderdictionary = [String: Any]()
+    var tododictionary = [String: Any]()
+    var timedictionary = [String: Any]()
+
+    let realm = try! Realm()
+    
     
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimeSetCell", bundle: nil), forCellReuseIdentifier: "TimeSetCell")
@@ -36,21 +38,20 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orderarray.count + 1
+        return orderdictionary.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeSetCell", for: indexPath) as! TimeSetCell
         readynumber = indexPath.row + 1
         todocontent = cell.contentTextField.text!
-        if indexPath.row != orderarray.count{//最後以外のcell
-            cell.orderLabel.text = orderarray[indexPath.row]
+        if indexPath.row != orderdictionary.count{//最後以外のcell
+            cell.orderLabel.text = orderdictionary[indexPath.row]
         }else{//最後のcell
             cell.orderLabel.text = "準備\(readynumber)"
             cell.timeLabel.text = changedtime
         }
         
-
         return cell
     }
     
@@ -71,7 +72,6 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         let minute = (timeCountNumber - second) / 60
         changedtime = String(format: "%02d:%02d", minute,second)
         self.table.reloadData()
-//        print(changedtime)
     }
     
     @IBAction func start(){
@@ -97,13 +97,13 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             }
         }
         self.table.reloadData()
-        print("resetおすと\(orderarray),\(todoarray),\(timearray)")
+        print("resetおすと\(orderdictionary),\(tododictionary),\(timedictionary)")
     }
     
     @IBAction func next(){
         if timer.isValid {//計測中に次へ
-            orderarray.append("準備\(readynumber)")
-//          todoarray.append(todocontent)
+            orderdictionary.append("準備\(readynumber)")
+          todoarray.append(todocontent)
             timearray.append(changedtime)
             timeCountNumber =  0
         } else {//タイマー止まってるときに次へ
@@ -111,28 +111,40 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 ///何もしない
             } else {
                 orderarray.append("準備\(readynumber)")
-//              todoarray.append(todocontent)
+              todoarray.append(todocontent)
                 timearray.append(changedtime)
                 timeCountNumber =  0
                 startTimer()
             }
         }
         self.table.reloadData()
-        print("nextおすと\(orderarray),\(todoarray),\(timearray)")
+        print("nextおすと\(orderdictionary),\(tododictionary),\(timedictionary)")
     }
 
     
     @IBAction func save(){
-        //        let updatetimersetdata = TimerSetData()
-        //        updatetimersetdata.readtnumber =
-        //            updatetimersetdata.content = //"ここでtextfieldに入力した内容を取得する"
-        //            updatetimersetdata.time = timeCountNumber
         
-        //        if timeCountNumber != 0{
-        //            try! realm.write(){
-        //                realm.add(updatetimersetdata)
-        //                // let timerData = try! Realm().objects(TimerSetData.self)
-        //            }
-        //        }
+        if timer.isValid{
+            timeCountNumber =  0
+        }
+
+        let updatetimersetdata = TimerSetData(value: orderdictionary)
+        updatetimersetdata.readynumber = orderdictionary
+        updatetimersetdata.content = tododictionary
+        updatetimersetdata.time = timedictionary
+        
+        if todoarray.count != orderarray.count && orderarray.count != 0 {
+            let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in})
+            )
+            present(alert, animated: true, completion: nil)
+        } else {
+            orderarray.append("準備\(readynumber)")
+    //          todoarray.append(todocontent)
+            timearray.append(changedtime)
+            try! realm.write(){
+                realm.add(updatetimersetdata)
+            }
+        }
     }
 }

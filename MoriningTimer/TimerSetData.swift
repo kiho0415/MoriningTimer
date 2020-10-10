@@ -8,15 +8,17 @@
 import Foundation
 import RealmSwift
 
-class TimerSetData: Object{
-    @objc dynamic var readtnumber: String = ""
-    @objc dynamic var content: String = ""
-    @objc dynamic var time: Int = 0
-    
-//    func  remove() {
-//        try! realm!.write {
-//            realm!.delete(self)
-//        }
-//
-//    }
+class TimerSet: Object {
+    @objc dynamic var timeset: String = ""
+   
 }
+class TimerSetData: Object{
+    @objc dynamic var readynumber: Any = ""
+    @objc dynamic var content: Any = ""
+    @objc dynamic var time: Any = ""
+    
+//    Listの定義
+    let timesetdatas = List<TimerSetData>()
+}
+
+
