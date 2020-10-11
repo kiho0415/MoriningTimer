@@ -127,7 +127,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         }
 
         let updatetodo = TimerSetData(value: tododictionary)
-        let updatetime = TimerSetData(value: timedictionary)
+//        let updatetime = TimerSetData(value: timedictionary)
 //        updatetimersetdata.readynumber = orderdictionary
 //        updatetimersetdata.content = tododictionary
 //        updatetimersetdata.time = timedictionary
@@ -142,7 +142,8 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             timedictionary.updateValue(changedtime, forKey: "準備\(readynumber)")
             try! realm.write(){
                 realm.add(updatetodo)
-                realm.add(updatetime)
+                print(updatetodo)
+//                realm.add(updatetime)
             }
         }
     }
