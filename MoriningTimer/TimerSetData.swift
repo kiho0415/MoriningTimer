@@ -13,7 +13,7 @@ class TimerSet: Object {
    
 }
 class TimerSetData: Object{
-    @objc dynamic var readynumber: Any = ""
+//    @objc dynamic var readynumber: Any = ""
     @objc dynamic var content: Any = ""
     @objc dynamic var time: Any = ""
     
