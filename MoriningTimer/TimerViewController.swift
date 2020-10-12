@@ -8,16 +8,21 @@
 import UIKit
 import RealmSwift
 
-class TimerViewController: UIViewController,UITableViewDataSource {
+class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var table: UITableView!
     @IBOutlet var readyContentLabel: UILabel!
     @IBOutlet var tillEndLabel: UILabel!
     @IBOutlet var tillArriveLabel: UILabel!
+    
+    let realm = try! Realm()
 
     override func viewDidLoad() {
+        table.register(UINib(nibName: "TimerCell", bundle: nil), forCellReuseIdentifier: "TimerCell")
         super.viewDidLoad()
         table.dataSource = self
+        table.delegate = self
+        
         // print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     

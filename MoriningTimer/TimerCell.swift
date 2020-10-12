@@ -2,14 +2,24 @@
 //  TimerCell.swift
 //  MoriningTimer
 //
-//  Created by 森田貴帆 on 2020/10/02.
+//  Created by 森田貴帆 on 2020/10/11.
 //
 
-import Foundation
 import UIKit
 
-class TimerCell: UITableViewCell{
+class TimerCell: UITableViewCell {
     @IBOutlet var nextnumberlabel: UILabel!
-    @IBOutlet var nextcontenclabel: UILabel!
-}
+    @IBOutlet var nextcontentlabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

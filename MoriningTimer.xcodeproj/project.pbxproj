@@ -10,6 +10,8 @@
 		BD45097EA2331C0D6B13FFBB /* Pods_MoriningTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E1FD7AA1CCE855F2F9259F /* Pods_MoriningTimer.framework */; };
 		E48A558CFDCE525BF0C9F6C0 /* Pods_MoriningTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */; };
 		F6D5F68279A0740DB99496E9 /* Pods_MoriningTimer_MoriningTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */; };
+		F97D863A253352160058CED4 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D8638253352160058CED4 /* TimerCell.swift */; };
+		F97D863B253352160058CED4 /* TimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97D8639253352160058CED4 /* TimerCell.xib */; };
 		F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735172525CD86007945C2 /* AppDelegate.swift */; };
 		F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735192525CD86007945C2 /* SceneDelegate.swift */; };
 		F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7351B2525CD86007945C2 /* ViewController.swift */; };
@@ -20,7 +22,6 @@
 		F9C7353A2525CD8B007945C2 /* MoriningTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735392525CD8B007945C2 /* MoriningTimerUITests.swift */; };
 		F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735552526F6F5007945C2 /* TimerViewController.swift */; };
 		F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */; };
-		F9C7356E25270303007945C2 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7356D25270303007945C2 /* TimerCell.swift */; };
 		F9C7358A2529C28C007945C2 /* TimerSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735892529C28C007945C2 /* TimerSetData.swift */; };
 		F9C73597252A372D007945C2 /* TimeSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C73595252A372D007945C2 /* TimeSetCell.swift */; };
 		F9C73598252A372D007945C2 /* TimeSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C73596252A372D007945C2 /* TimeSetCell.xib */; };
@@ -51,6 +52,8 @@
 		9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoriningTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C447CAAC76C5C15B9BACBED1 /* Pods-MoriningTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer.release.xcconfig"; sourceTree = "<group>"; };
 		E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F97D8638253352160058CED4 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		F97D8639253352160058CED4 /* TimerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerCell.xib; sourceTree = "<group>"; };
 		F9C735142525CD86007945C2 /* MoriningTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoriningTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C735172525CD86007945C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C735192525CD86007945C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +70,6 @@
 		F9C7353B2525CD8B007945C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C735552526F6F5007945C2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetViewController.swift; sourceTree = "<group>"; };
-		F9C7356D25270303007945C2 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		F9C735892529C28C007945C2 /* TimerSetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetData.swift; sourceTree = "<group>"; };
 		F9C73595252A372D007945C2 /* TimeSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSetCell.swift; sourceTree = "<group>"; };
 		F9C73596252A372D007945C2 /* TimeSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSetCell.xib; sourceTree = "<group>"; };
@@ -155,15 +157,16 @@
 				F9C735192525CD86007945C2 /* SceneDelegate.swift */,
 				F9C7351B2525CD86007945C2 /* ViewController.swift */,
 				F9C735552526F6F5007945C2 /* TimerViewController.swift */,
-				F9C7356D25270303007945C2 /* TimerCell.swift */,
+				F97D8638253352160058CED4 /* TimerCell.swift */,
+				F97D8639253352160058CED4 /* TimerCell.xib */,
 				F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */,
 				F9C73595252A372D007945C2 /* TimeSetCell.swift */,
 				F9C73596252A372D007945C2 /* TimeSetCell.xib */,
+				F9C735892529C28C007945C2 /* TimerSetData.swift */,
 				F9C7351D2525CD86007945C2 /* Main.storyboard */,
 				F9C735202525CD8A007945C2 /* Assets.xcassets */,
 				F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */,
 				F9C735252525CD8A007945C2 /* Info.plist */,
-				F9C735892529C28C007945C2 /* TimerSetData.swift */,
 			);
 			path = MoriningTimer;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C735242525CD8A007945C2 /* LaunchScreen.storyboard in Resources */,
+				F97D863B253352160058CED4 /* TimerCell.xib in Resources */,
 				F9C735212525CD8A007945C2 /* Assets.xcassets in Resources */,
 				F9C7351F2525CD86007945C2 /* Main.storyboard in Resources */,
 				F9C73598252A372D007945C2 /* TimeSetCell.xib in Resources */,
@@ -428,10 +432,10 @@
 				F9C735562526F6F5007945C2 /* TimerViewController.swift in Sources */,
 				F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */,
 				F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */,
+				F97D863A253352160058CED4 /* TimerCell.swift in Sources */,
 				F9C7358A2529C28C007945C2 /* TimerSetData.swift in Sources */,
 				F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */,
 				F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */,
-				F9C7356E25270303007945C2 /* TimerCell.swift in Sources */,
 				F9C73597252A372D007945C2 /* TimeSetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
