@@ -146,7 +146,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 updatetimersetdata.content = todoarray
                 updatetimersetdata.time = timearray
                 updatetimersetdata.tags.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
-                updatetimersetdata.tags.append("")
+                updatetimersetdata.tags.append(objectsIn: orderarray)
                 realm.add(updatetimersetdata)
                 print(updatetimersetdata)
             }
