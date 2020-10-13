@@ -20,9 +20,9 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     var readynumber = Int()
     var todocontent = String()
     
-    var orderarray = [String]()
-    var todoarray = [String]() //準備番号と内容を対応させる
-    var timearray = [String]() //準備番号と所用時間を対応させる
+    var orderarray: [String] = []
+    var todoarray = [String]()
+    var timearray = [Int]()  //時間ように変更したのじゃないのを保存するためにint型にしてみた
 
     let realm = try! Realm()
     
@@ -73,13 +73,13 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         self.table.reloadData()
     }
     
-    @IBAction func start(){
+    @IBAction func start(_ sender: UIButton){
         if timer.isValid{//一時停止
             timer.invalidate()
-            startButton.setTitle("スタート", for: .highlighted)
+//            startButton.setTitle("スタート", for: .highlighted)
         }else{//タイマーを動かす
             startTimer()
-            startButton.setTitle("ストップ", for: .highlighted)///ボタンが切り替わらない
+            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
         }
     }
     
@@ -96,14 +96,14 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             }
         }
         self.table.reloadData()
-        print("resetおすとと\(orderarray),\(todoarray),\(timearray)")
+        print("resetおすと\(orderarray),\(todoarray),\(timearray)")
     }
     
     @IBAction func next(){
         if timer.isValid {//計測中に次へ
             orderarray.append("準備\(readynumber)")
             todoarray.append(todocontent)
-            timearray.append(changedtime)
+            timearray.append(timeCountNumber)
             timeCountNumber =  0
         } else {//タイマー止まってるときに次へ
             if timearray == [] {//スタートの前にリセットを押す
@@ -111,7 +111,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             } else {
                 orderarray.append("準備\(readynumber)")
                 todoarray.append(todocontent)
-                timearray.append(changedtime)
+                timearray.append(timeCountNumber)
                 timeCountNumber =  0
                 startTimer()
             }
@@ -129,7 +129,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         }
         orderarray.append("準備\(readynumber)")
         todoarray.append(todocontent)
-        timearray.append(changedtime)
+        timearray.append(timeCountNumber)
         print("savetおすと\(orderarray),\(todoarray),\(timearray)")
         let updatetimersetdata = TimerSetData()
 //        let updatetime = TimerSetData(value: timedictionary)
@@ -150,6 +150,17 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 realm.add(updatetimersetdata)
                 print(updatetimersetdata)
             }
+            //アラートを表示
+            let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    // 0.5秒後に実行したい処理
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }))
+            //アラートの表示
+            present(alert, animated: true, completion: nil)
         }
     }
 }

@@ -16,14 +16,12 @@ class TimerSetData: Object{
     @objc dynamic var readynumber: Any = ""
     @objc dynamic var content: Any = ""
     @objc dynamic var time: Any = ""
-    
     //Listの定義
     var tags = List<Tag>()
 }
 
 class Tag: Object {
-    @objc dynamic var tagName = ""
-
+//    @objc dynamic var tagName = ""
     var timesetdatas: LinkingObjects<TimerSetData> {
         return LinkingObjects(fromType: TimerSetData.self, property: "tags")
     }

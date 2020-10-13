@@ -17,30 +17,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-BL-kG1">
-                                <rect key="frame" x="146" y="233" width="123" height="30"/>
+                                <rect key="frame" x="38" y="117" width="331" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="タイマースタート"/>
+                                <color key="backgroundColor" red="0.77729994775026978" green="0.91196893812137325" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="38"/>
+                                <state key="normal" title="タイマースタート">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.098286477006229722" green="0.10055123730964466" blue="0.08960395810798745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="timerstart" destination="BYZ-38-t0r" eventType="touchUpInside" id="tCd-6W-DxZ"/>
                                     <segue destination="PtL-59-bYK" kind="show" id="fyo-pX-Hoi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSi-oQ-9ca">
-                                <rect key="frame" x="137" y="571" width="132" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="カスタム設定"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uy-Mg-2fe">
-                                <rect key="frame" x="38" y="735" width="331" height="77"/>
+                                <rect key="frame" x="38" y="757" width="331" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCW-Ta-QxP">
-                                <rect key="frame" x="156" y="433" width="102" height="30"/>
+                                <rect key="frame" x="38" y="472" width="331" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="測定する"/>
+                                <color key="backgroundColor" red="0.76277328198697203" green="0.86824736686324677" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="38"/>
+                                <state key="normal" title="測定する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.098286477009999998" green="0.1005512373" blue="0.089603958110000007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="timeset" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKd-rP-iWj"/>
                                     <segue destination="0Sl-p0-sb1" kind="show" id="ci4-UZ-UBn"/>
@@ -48,7 +53,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97747655460031113" green="1" blue="0.89112735462473347" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="ホーム" id="sOF-1b-LA3"/>
                     <connections>
@@ -126,8 +131,8 @@
                     <connections>
                         <outlet property="readyContentLabel" destination="cTA-KA-GkA" id="QH6-vp-dLH"/>
                         <outlet property="table" destination="bbU-Na-AAa" id="2Rj-ws-hSZ"/>
-                        <outlet property="tillArriveMinuteLabel" destination="iek-HS-qQo" id="GpH-ap-TFr"/>
-                        <outlet property="tillEndMinuteLabel" destination="f3o-12-Ma2" id="eXY-Xf-ULi"/>
+                        <outlet property="tillArriveLabel" destination="iek-HS-qQo" id="tsK-48-Wb0"/>
+                        <outlet property="tillEndLabel" destination="f3o-12-Ma2" id="UQk-do-VKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWT-5q-tql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
