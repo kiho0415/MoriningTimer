@@ -21,7 +21,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     var todocontent = String()
     
     var orderarray: [String] = []
-    var todoarray = [String]()
+    var todoarray: [String] = []
     var timearray = [Int]()  //時間ように変更したのじゃないのを保存するためにint型にしてみた
 
     let realm = try! Realm()
@@ -130,8 +130,8 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         orderarray.append("準備\(readynumber)")
         todoarray.append(todocontent)
         timearray.append(timeCountNumber)
-        print("savetおすと\(orderarray),\(todoarray),\(timearray)")
-        let updatetimersetdata = TimerSetData(value: orderarray)
+        print("saveおすと\(orderarray),\(todoarray),\(timearray)")
+        let updatetimersetdata = TimerSetData()
 //        let updatetime = TimerSetData(value: timedictionary)
 
         
@@ -145,8 +145,12 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
 //                updatetimersetdata.readynumber = orderarray
 //                updatetimersetdata.content = todoarray
 //                updatetimersetdata.time = timearray
-//                updatetimersetdata.tags.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
-//                updatetimersetdata.tags.append(objectsIn: orderarray)
+                updatetimersetdata.order.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
+                updatetimersetdata.todo.removeAll()
+                updatetimersetdata.time.removeAll()
+                updatetimersetdata.order.append(objectsIn: orderarray)
+                updatetimersetdata.time.append(objectsIn: timearray)
+                updatetimersetdata.todo.append(objectsIn: todoarray)
                 realm.add(updatetimersetdata)
                 print(updatetimersetdata)
             }
@@ -156,7 +160,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     // 0.5秒後に実行したい処理
-                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }))
             //アラートの表示

@@ -13,17 +13,18 @@ import RealmSwift
 //
 //}
 class TimerSetData: Object{
-    @objc dynamic var readynumber: Any = ""
-    @objc dynamic var content: Any = ""
-    @objc dynamic var time: Any = ""
     //Listの定義
-    var tags = List<Tag>()
+    var order = List<String>()
+    var todo = List<String>()
+    var time = List<Int>()
 }
 
 class Tag: Object {
 //    @objc dynamic var tagName = ""
     var timesetdatas: LinkingObjects<TimerSetData> {
-        return LinkingObjects(fromType: TimerSetData.self, property: "tags")
+        return LinkingObjects(fromType: TimerSetData.self, property: "order")
+        return LinkingObjects(fromType: TimerSetData.self, property: "todo")
+        return LinkingObjects(fromType: TimerSetData.self, property: "time")
     }
 }
 //class Task: Object {

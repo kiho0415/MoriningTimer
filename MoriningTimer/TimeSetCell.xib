@@ -37,10 +37,13 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
+                <connections>
+                    <outlet property="contentTextField" destination="B2x-6D-KAI" id="iy2-7H-JUT"/>
+                </connections>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="contentTextField" destination="B2x-6D-KAI" id="iKC-JR-1Yu"/>
+                <outlet property="contentTextField" destination="B2x-6D-KAI" id="ueA-0U-ICK"/>
                 <outlet property="orderLabel" destination="byB-DH-4v5" id="ZGq-jc-IPW"/>
                 <outlet property="timeLabel" destination="bsQ-yB-t5b" id="1Vb-QV-KbR"/>
             </connections>
