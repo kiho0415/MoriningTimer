@@ -73,13 +73,13 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         self.table.reloadData()
     }
     
-    @IBAction func start(_ sender: UIButton){
+    @IBAction func start(){
         if timer.isValid{//一時停止
             timer.invalidate()
 //            startButton.setTitle("スタート", for: .highlighted)
         }else{//タイマーを動かす
             startTimer()
-            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
+//            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
         }
     }
     
@@ -131,7 +131,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         todoarray.append(todocontent)
         timearray.append(timeCountNumber)
         print("savetおすと\(orderarray),\(todoarray),\(timearray)")
-        let updatetimersetdata = TimerSetData()
+        let updatetimersetdata = TimerSetData(value: orderarray)
 //        let updatetime = TimerSetData(value: timedictionary)
 
         
@@ -142,11 +142,11 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             present(alert, animated: true, completion: nil)
         } else {
             try! realm.write(){
-                updatetimersetdata.readynumber = orderarray
-                updatetimersetdata.content = todoarray
-                updatetimersetdata.time = timearray
-                updatetimersetdata.tags.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
-                updatetimersetdata.tags.append(objectsIn: orderarray)
+//                updatetimersetdata.readynumber = orderarray
+//                updatetimersetdata.content = todoarray
+//                updatetimersetdata.time = timearray
+//                updatetimersetdata.tags.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
+//                updatetimersetdata.tags.append(objectsIn: orderarray)
                 realm.add(updatetimersetdata)
                 print(updatetimersetdata)
             }
