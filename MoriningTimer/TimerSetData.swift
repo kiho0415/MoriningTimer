@@ -8,31 +8,25 @@
 import Foundation
 import RealmSwift
 
-//class TimerSet: Object {
-//    @objc dynamic var timeset: String = ""
-//
-//}
+
 class TimerSetData: Object{
-    //Listの定義
-    var order = List<String>()
-    var todo = List<String>()
-    var time = List<Int>()
+    @objc dynamic var order: String = ""
+    @objc dynamic var todo: String = ""
+    @objc dynamic var time: Int = 0
 }
 
-class Tag: Object {
-//    @objc dynamic var tagName = ""
-    var timesetdatas: LinkingObjects<TimerSetData> {
-        return LinkingObjects(fromType: TimerSetData.self, property: "order")
-        return LinkingObjects(fromType: TimerSetData.self, property: "todo")
-        return LinkingObjects(fromType: TimerSetData.self, property: "time")
-    }
-}
-//class Task: Object {
-//    @objc dynamic var taskTitle: String = ""
+///リストを使うときにこれを復活させる
+//class TimerSetData: Object{
 //    //Listの定義
-//    let tickets = List<Ticket>()
+//    var order = List<String>()
+//    var todo = List<String>()
+//    var time = List<Int>()
 //}
 //
-//class Ticket: Object {
-//    @objc dynamic var ticketTitle: String = ""
+//class Tag: Object {
+//    var timesetdatas: LinkingObjects<TimerSetData> {
+//        return LinkingObjects(fromType: TimerSetData.self, property: "order")
+//        return LinkingObjects(fromType: TimerSetData.self, property: "todo")
+//        return LinkingObjects(fromType: TimerSetData.self, property: "time")
+//    }
 //}
