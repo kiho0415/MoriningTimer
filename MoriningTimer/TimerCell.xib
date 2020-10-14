@@ -32,8 +32,8 @@
                     </label>
                 </subviews>
                 <connections>
-                    <outlet property="nextcontentlabel" destination="ai1-l2-qtX" id="k0Z-KS-n2r"/>
                     <outlet property="nextnumberlabel" destination="8XI-fR-pmT" id="6R3-ns-U4s"/>
+                    <outlet property="nexttimelabel" destination="ai1-l2-qtX" id="Zyg-WV-sr6"/>
                 </connections>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

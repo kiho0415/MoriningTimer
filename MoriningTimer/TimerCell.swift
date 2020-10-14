@@ -9,7 +9,7 @@ import UIKit
 
 class TimerCell: UITableViewCell {
     @IBOutlet var nextnumberlabel: UILabel!
-    @IBOutlet var nextcontentlabel: UILabel!
+    @IBOutlet var nexttimelabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

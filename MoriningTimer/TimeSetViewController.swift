@@ -44,8 +44,11 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeSetCell", for: indexPath) as! TimeSetCell
         readynumber = indexPath.row + 1
         todocontent = cell.contentTextField.text!
+//        for i in 0...indexPath.row{
+//            todoArray.append(cell[indexPath.row].contentTextField.text)
+//        }
         if indexPath.row != timeArray.count{//最後以外のcell
-            //            cell.orderLabel.text = timedictionary.keys[indexPath.row]
+            
         }else{//最後のcell
             cell.orderLabel.text = "準備\(readynumber)"
             cell.timeLabel.text = changedtime

@@ -20,6 +20,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
 
     var timer:Timer = Timer()
     var timeCountNumber: Int = 0
+//    var timeCountNumber2: Int = 0
     var orderarray: [String] = []
     var todoarray: [String] = []
     var timearray = [Int]()  //時間ように変更したのじゃないのを保存するためにint型にしてみた
@@ -48,12 +49,16 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timerSetDataArray.count
+        return timerSetDataArray.count - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell") as? TimerCell
-        return cell!
+        cell.nextnumberlabel.text = timerSetDataArray[indexPath.row + 1].order
+        timeCountNumber = timerSetDataArray[indexPath.row + 1].time
+        timechange()
+        cell.nexttimelabel.text = changedtime
+        return cell
     }
     
     func startTimer() {
