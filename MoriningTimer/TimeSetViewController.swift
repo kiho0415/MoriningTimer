@@ -146,17 +146,19 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
         if todoArray.count != orderArray.count && orderArray.count != 0{
             let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in})
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in}
+            
             )
-            present(alert, animated: true, completion: nil)
+        )
+        present(alert, animated: true, completion: nil)
         } else {
-//            //前回までのデータを消す
-//            try! realm.write(){
-//                realm.deleteAll()
-//            }
+            //前回までのデータを消す
+            try! realm.write(){
+                realm.deleteAll()
+            }
 
             for i in 0...timeArray.count - 1 {
-//                let newTimerSetData = TimerSetData()
+                let newTimerSetData = TimerSetData()
                 newTimerSetData.order = orderArray[i]
                 newTimerSetData.todo = todoArray[i]
                 newTimerSetData.time = timeArray[i]

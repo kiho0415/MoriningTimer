@@ -17,28 +17,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func timerstart(){
-        let alert: UIAlertController = UIAlertController(title: "", message: "準備タイマーを開始します。", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "", message: "前回の計測を元に準備タイマーを開始します。", preferredStyle: .alert)
         alert.addAction(
             UIAlertAction(
                 title: "OK",
                 style: .default,
                 handler: { action in
-
-                    //Realmから取得してタイマー開始
                 }
+                )
             )
-        )
         alert.addAction(
-            UIAlertAction(
-                title: "キャンセル",
-                style: .cancel,
-                handler: { action in
+                    UIAlertAction(
+                    title: "キャンセル",
+                    style: .cancel,
+                    handler: { action in
                     self.navigationController?.popViewController(animated: true)
+                    }
+                    )
+                    )
+                    present(alert, animated: true, completion: nil)
                 }
-            )
-        )
-        present(alert, animated: true, completion: nil)
-    }
 
     @IBAction func timeset(){
         let alert: UIAlertController = UIAlertController(title: "", message: "測定を始めます。次の準備に移るときに「次の準備へ」を押してください。", preferredStyle: .alert)

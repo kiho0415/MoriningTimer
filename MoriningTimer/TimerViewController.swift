@@ -19,11 +19,12 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     let realm = try! Realm()
 
     var timer:Timer = Timer()
+    var timeCountNumbertop: Int = 0
     var timeCountNumber: Int = 0
-//    var timeCountNumber2: Int = 0
     var orderarray: [String] = []
     var todoarray: [String] = []
-    var timearray = [Int]()  //時間ように変更したのじゃないのを保存するためにint型にしてみた
+    var timearray = [Int]()  
+    var changedtimetop = String()
     var changedtime = String()
     let timerSetDataArray = try! Realm().objects(TimerSetData.self)
 
@@ -40,12 +41,13 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         
+        //必要な情報の表示
         readyContentLabel.text = timerSetDataArray[0].order
         todoLabel.text = timerSetDataArray[0].todo
-        timeCountNumber = timerSetDataArray[0].time
-        timechange()
-        tillEndLabel.text = changedtime
-     
+        timeCountNumbertop = timerSetDataArray[0].time
+        timechangetop()
+        tillEndLabel.text = changedtimetop
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,18 +75,25 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     @objc func count(){
-        timeCountNumber = timeCountNumber + 1
-        timechange()
-        self.table.reloadData()
+        if timeCountNumbertop > 0 {
+            timeCountNumbertop = timeCountNumbertop - 1
+            timechangetop()
+            tillEndLabel.text = changedtimetop
+        } else if timeCountNumbertop == 0{
+            timer.invalidate()
+            timeCountNumbertop =  0
+        }
+
     }
     
+    @IBAction func start(){
+            startTimer()
+    }
     @IBAction func stop(){
         if timer.isValid{//一時停止
             timer.invalidate()
-            //            startButton.setTitle("スタート", for: .highlighted)
         }else{//タイマーを動かす
-            startTimer()
-            //            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
+            ///何もしない
         }
     }
     
@@ -92,5 +101,10 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let second = timeCountNumber % 60
         let minute = (timeCountNumber - second) / 60
         changedtime = String(format: "%02d:%02d", minute,second)
+    }
+    func timechangetop(){
+        let second = timeCountNumbertop % 60
+        let minute = (timeCountNumbertop - second) / 60
+        changedtimetop = String(format: "%02d:%02d", minute,second)
     }
 }
