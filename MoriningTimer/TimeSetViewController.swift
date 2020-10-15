@@ -48,7 +48,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
 //        for i in 0...indexPath.row{
 //            todoArray.append(cell[indexPath.row].contentTextField.text)
 //        }
-        cell.contentTextField.placeholder = "内容";
+        cell.contentTextField.placeholder = "準備内容";
         if indexPath.row != timeArray.count{//最後以外のcell
             
         }else{//最後のcell

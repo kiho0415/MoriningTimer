@@ -7,8 +7,9 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
-class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet var table: UITableView!
     @IBOutlet var readyContentLabel: UILabel!
@@ -23,10 +24,11 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     var timeCountNumber: Int = 0
     var orderarray: [String] = []
     var todoarray: [String] = []
-    var timearray = [Int]()  
+    var timearray = [Int]()
     var changedtimetop = String()
     var changedtime = String()
     let timerSetDataArray = try! Realm().objects(TimerSetData.self)
+    var arrayInNumber :Int =  0
 
 
 //    let orderList = List<String>() //List型
@@ -41,12 +43,14 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         
-        //必要な情報の表示
-        readyContentLabel.text = timerSetDataArray[0].order
-        todoLabel.text = timerSetDataArray[0].todo
-        timeCountNumbertop = timerSetDataArray[0].time
+        //必要な情報の表示　arrayInNumberは0
+        readyContentLabel.text = timerSetDataArray[arrayInNumber].order
+        todoLabel.text = timerSetDataArray[arrayInNumber].todo
+        timeCountNumbertop = timerSetDataArray[arrayInNumber].time
         timechangetop()
         tillEndLabel.text = changedtimetop
+        
+       
 
     }
     
@@ -80,8 +84,10 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             timechangetop()
             tillEndLabel.text = changedtimetop
         } else if timeCountNumbertop == 0{
-            timer.invalidate()
-            timeCountNumbertop =  0
+//            timer.invalidate()　タイマー止めなくていいんじゃないか
+            
+            //changetimetopwpかえる
+
         }
 
     }
@@ -106,5 +112,43 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let second = timeCountNumbertop % 60
         let minute = (timeCountNumbertop - second) / 60
         changedtimetop = String(format: "%02d:%02d", minute,second)
+    }
+    
+    //ローカル通知
+    
+    func localnotification() {
+            // ローカル通知の内容
+            let content = UNMutableNotificationContent()
+            content.sound = UNNotificationSound.default
+            content.title = "お知らせ"
+//            content.subtitle = "タイマー通知"
+            content.body = "次の準備に移ってください"
+   
+            // タイマーの時間（秒）をセット
+            let timer = 10
+            // ローカル通知リクエストを作成
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timer), repeats: false)
+            let identifier = NSUUID().uuidString
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request){ (error : Error?) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+
+    
+    func nexttimer(){
+        if arrayInNumber < timerSetDataArray.count{
+            arrayInNumber = arrayInNumber + 1
+            readyContentLabel.text = timerSetDataArray[arrayInNumber].order
+            todoLabel.text = timerSetDataArray[arrayInNumber].todo
+            timeCountNumbertop = timerSetDataArray[arrayInNumber].time
+            timechangetop()
+            tillEndLabel.text = changedtimetop
+        } else {
+            ///何もしないorローカル通知
+        }
+       
     }
 }
