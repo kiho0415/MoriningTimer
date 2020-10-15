@@ -30,12 +30,6 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     let timerSetDataArray = try! Realm().objects(TimerSetData.self)
     var arrayInNumber :Int =  0
 
-
-//    let orderList = List<String>() //List型
-//    var orderarray = Array<Any>() // Array型
-//    let orderarray.append(contentsOf: Array(orderList)) // Array()でListを変換
-//    let orderarray = Array<Any>()
-
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimerCell", bundle: nil), forCellReuseIdentifier: "TimerCell")
         
@@ -49,9 +43,6 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         timeCountNumbertop = timerSetDataArray[arrayInNumber].time
         timechangetop()
         tillEndLabel.text = changedtimetop
-        
-       
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,7 +77,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         } else if timeCountNumbertop == 0{
 //            timer.invalidate()　タイマー止めなくていいんじゃないか
             
-            //changetimetopwpかえる
+            //changetimetopかえる
 
         }
 
@@ -114,8 +105,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         changedtimetop = String(format: "%02d:%02d", minute,second)
     }
     
-    //ローカル通知
-    
+    //ローカル通知まだいじりちゅう
     func localnotification() {
             // ローカル通知の内容
             let content = UNMutableNotificationContent()
@@ -137,7 +127,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             }
         }
 
-    
+    ///ラベルのタイマーが00:00になった時にこのメソッドを呼び出したい
     func nexttimer(){
         if arrayInNumber < timerSetDataArray.count{
             arrayInNumber = arrayInNumber + 1
