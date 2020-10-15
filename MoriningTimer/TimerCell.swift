@@ -8,8 +8,8 @@
 import UIKit
 
 class TimerCell: UITableViewCell {
-    @IBOutlet var nextnumberlabel: UILabel!
-    @IBOutlet var nexttimelabel: UILabel!
+    @IBOutlet weak var nextnumberlabel : UILabel!
+    @IBOutlet weak var nexttimelabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

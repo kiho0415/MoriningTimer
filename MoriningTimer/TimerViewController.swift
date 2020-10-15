@@ -35,11 +35,11 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimerCell", bundle: nil), forCellReuseIdentifier: "TimerCell")
+        
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
         
-
         readyContentLabel.text = timerSetDataArray[0].order
         todoLabel.text = timerSetDataArray[0].todo
         timeCountNumber = timerSetDataArray[0].time
@@ -53,11 +53,11 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell") as? TimerCell
-        cell.nextnumberlabel.text = timerSetDataArray[indexPath.row + 1].order
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! TimerCell
+        cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + 1].order)
         timeCountNumber = timerSetDataArray[indexPath.row + 1].time
         timechange()
-        cell.nexttimelabel.text = changedtime
+        cell.nexttimelabel?.text =  String(changedtime)
         return cell
     }
     
@@ -72,14 +72,20 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }
     }
     
-    @objc func count(){ ///これはコピペしただけだから変える
+    @objc func count(){
         timeCountNumber = timeCountNumber + 1
         timechange()
         self.table.reloadData()
     }
     
     @IBAction func stop(){
-        
+        if timer.isValid{//一時停止
+            timer.invalidate()
+            //            startButton.setTitle("スタート", for: .highlighted)
+        }else{//タイマーを動かす
+            startTimer()
+            //            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
+        }
     }
     
     func timechange(){

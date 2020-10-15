@@ -25,13 +25,14 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     var timeArray = [Int]()  //時間形式に変更したのじゃないのを保存するためにint型にしてみた
     
     let realm = try! Realm()
-    
+    let newTimerSetData = TimerSetData()
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimeSetCell", bundle: nil), forCellReuseIdentifier: "TimeSetCell")
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         //startButton.setTitle("開始", for: .normal)
         //cell.contenttextfield.delegate = self
     }
@@ -47,6 +48,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
 //        for i in 0...indexPath.row{
 //            todoArray.append(cell[indexPath.row].contentTextField.text)
 //        }
+        cell.contentTextField.placeholder = "内容";
         if indexPath.row != timeArray.count{//最後以外のcell
             
         }else{//最後のcell
@@ -140,22 +142,21 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         
         ///リストを使うことになったらここを復活させる
         //        let updatetimersetdata = TimerSetData()
-        
-        ///今からこれをfor文を使って繰り返し処理に変えていきます
-        
-        //        newTimerSetData.order = orderArray[0]
-        //        newTimerSetData.todo = todoArray[0]
-        //        newTimerSetData.time = timeArray[0]
-       
-        
+    
+    
         if todoArray.count != orderArray.count && orderArray.count != 0{
             let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in})
             )
             present(alert, animated: true, completion: nil)
         } else {
+//            //前回までのデータを消す
+//            try! realm.write(){
+//                realm.deleteAll()
+//            }
+
             for i in 0...timeArray.count - 1 {
-                let newTimerSetData = TimerSetData()
+//                let newTimerSetData = TimerSetData()
                 newTimerSetData.order = orderArray[i]
                 newTimerSetData.todo = todoArray[i]
                 newTimerSetData.time = timeArray[i]
