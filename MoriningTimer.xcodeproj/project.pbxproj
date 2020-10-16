@@ -12,6 +12,7 @@
 		F6D5F68279A0740DB99496E9 /* Pods_MoriningTimer_MoriningTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */; };
 		F97D863A253352160058CED4 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D8638253352160058CED4 /* TimerCell.swift */; };
 		F97D863B253352160058CED4 /* TimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97D8639253352160058CED4 /* TimerCell.xib */; };
+		F97D867C25395CE70058CED4 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D867B25395CE70058CED4 /* ColorViewController.swift */; };
 		F9C735182525CD86007945C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735172525CD86007945C2 /* AppDelegate.swift */; };
 		F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C735192525CD86007945C2 /* SceneDelegate.swift */; };
 		F9C7351C2525CD86007945C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7351B2525CD86007945C2 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F97D8638253352160058CED4 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		F97D8639253352160058CED4 /* TimerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerCell.xib; sourceTree = "<group>"; };
+		F97D867B25395CE70058CED4 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		F9C735142525CD86007945C2 /* MoriningTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoriningTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C735172525CD86007945C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C735192525CD86007945C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				F9C735202525CD8A007945C2 /* Assets.xcassets */,
 				F9C735222525CD8A007945C2 /* LaunchScreen.storyboard */,
 				F9C735252525CD8A007945C2 /* Info.plist */,
+				F97D867B25395CE70058CED4 /* ColorViewController.swift */,
 			);
 			path = MoriningTimer;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				F9C7358A2529C28C007945C2 /* TimerSetData.swift in Sources */,
 				F9C7355B2526F7CF007945C2 /* TimeSetViewController.swift in Sources */,
 				F9C7351A2525CD86007945C2 /* SceneDelegate.swift in Sources */,
+				F97D867C25395CE70058CED4 /* ColorViewController.swift in Sources */,
 				F9C73597252A372D007945C2 /* TimeSetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

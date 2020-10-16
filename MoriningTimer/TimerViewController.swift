@@ -16,20 +16,26 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet var todoLabel: UILabel!
     @IBOutlet var tillEndLabel: UILabel!
     @IBOutlet var tillArriveLabel: UILabel!
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
     
     let realm = try! Realm()
 
     var timer:Timer = Timer()
     var timeCountNumbertop: Int = 0
     var timeCountNumber: Int = 0
-    var orderarray: [String] = []
-    var todoarray: [String] = []
-    var timearray = [Int]()
+   
     var changedtimetop = String()
     var changedtime = String()
     let timerSetDataArray = try! Realm().objects(TimerSetData.self)
+    var orderarray: [String] = []
+    var todoarray: [String] = []
+    var timearray = [Int]()
+
     var arrayInNumber :Int =  0
 
+    
+ 
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimerCell", bundle: nil), forCellReuseIdentifier: "TimerCell")
         
@@ -37,7 +43,10 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         
+        startButton.layer.cornerRadius = 20
+        stopButton.layer.cornerRadius = 20
         //必要な情報の表示　arrayInNumberは0
+//        orderarray.append(timerSetDataArray.order)
         readyContentLabel.text = timerSetDataArray[arrayInNumber].order
         todoLabel.text = timerSetDataArray[arrayInNumber].todo
         timeCountNumbertop = timerSetDataArray[arrayInNumber].time
@@ -51,10 +60,13 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! TimerCell
-        cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + 1].order)
-        timeCountNumber = timerSetDataArray[indexPath.row + 1].time
-        timechange()
-        cell.nexttimelabel?.text =  String(changedtime)
+        ///ここでfor分の繰り返し処理 配列の中身を全部表示する
+//        for arrayInNumber in 0...timerSetDataArray.count - 1 {
+            cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + 1].order)
+            timeCountNumber = timerSetDataArray[indexPath.row + 1].time
+            timechange()
+            cell.nexttimelabel?.text =  String(changedtime)
+//        }
         return cell
     }
     
@@ -75,10 +87,8 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             timechangetop()
             tillEndLabel.text = changedtimetop
         } else if timeCountNumbertop == 0{
-//            timer.invalidate()　タイマー止めなくていいんじゃないか
-            
-            //changetimetopかえる
-
+            nexttimer()
+            ///ここでセルの内容も変える
         }
 
     }
@@ -105,6 +115,37 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         changedtimetop = String(format: "%02d:%02d", minute,second)
     }
     
+    func nexttimer(){
+        if arrayInNumber < timerSetDataArray.count{
+            //まず表示
+            arrayInNumber = arrayInNumber + 1
+            readyContentLabel.text = timerSetDataArray[arrayInNumber].order
+            todoLabel.text = timerSetDataArray[arrayInNumber].todo
+            timeCountNumbertop = timerSetDataArray[arrayInNumber].time
+            timechangetop()
+            tillEndLabel.text = changedtimetop
+            //したら配列から消しちゃう
+//            timerSetDataArray[0].delete
+        } else {
+            let alert: UIAlertController = UIAlertController(title: "", message: "準備完了です。", preferredStyle: .alert)
+            alert.addAction(
+                UIAlertAction(
+                    title: "OK",
+                    style: .default,
+                    handler: { action in
+                        //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            // 0.5秒後に実行したい処理
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                )
+            )
+            present(alert, animated: true, completion: nil)
+        }
+
+    }
+
     //ローカル通知まだいじりちゅう
     func localnotification() {
             // ローカル通知の内容
@@ -113,7 +154,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             content.title = "お知らせ"
 //            content.subtitle = "タイマー通知"
             content.body = "次の準備に移ってください"
-   
+
             // タイマーの時間（秒）をセット
             let timer = 10
             // ローカル通知リクエストを作成
@@ -127,18 +168,4 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             }
         }
 
-    ///ラベルのタイマーが00:00になった時にこのメソッドを呼び出したい
-    func nexttimer(){
-        if arrayInNumber < timerSetDataArray.count{
-            arrayInNumber = arrayInNumber + 1
-            readyContentLabel.text = timerSetDataArray[arrayInNumber].order
-            todoLabel.text = timerSetDataArray[arrayInNumber].todo
-            timeCountNumbertop = timerSetDataArray[arrayInNumber].time
-            timechangetop()
-            tillEndLabel.text = changedtimetop
-        } else {
-            ///何もしないorローカル通知
-        }
-       
-    }
 }

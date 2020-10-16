@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>07やさしさゴシック.otf</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>

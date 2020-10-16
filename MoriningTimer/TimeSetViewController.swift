@@ -12,7 +12,9 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     @IBOutlet var table: UITableView!
     @IBOutlet var startButton: UIButton!
-    
+    @IBOutlet var stopButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var nextButton: UIButton!
     //タイマーの秒数を表示する
     var timeCountNumber: Int = 0
     var timer: Timer = Timer()
@@ -26,6 +28,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     let realm = try! Realm()
     let newTimerSetData = TimerSetData()
+    
     override func viewDidLoad() {
         table.register(UINib(nibName: "TimeSetCell", bundle: nil), forCellReuseIdentifier: "TimeSetCell")
         super.viewDidLoad()
@@ -33,7 +36,11 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         table.delegate = self
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        //startButton.setTitle("開始", for: .normal)
+        startButton.layer.cornerRadius = 20
+        stopButton.layer.cornerRadius = 20
+        resetButton.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius = 20
+
         //cell.contenttextfield.delegate = self
     }
     
@@ -80,11 +87,17 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     @IBAction func start(){
         if timer.isValid{//一時停止
-            timer.invalidate()
-            //            startButton.setTitle("スタート", for: .highlighted)
+          
         }else{//タイマーを動かす
             startTimer()
-            //            sender.setTitle("ストップ", for: .normal)///ボタンが切り替わらない
+        }
+    }
+    
+    @IBAction func stop(){
+        if timer.isValid{//一時停止
+            timer.invalidate()
+        }else{//タイマーを動かす
+            
         }
     }
     
@@ -139,11 +152,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             timeArray.append(timeCountNumber)
         }
         print("saveおすと\(orderArray),\(todoArray),\(timeArray)")
-        
-        ///リストを使うことになったらここを復活させる
-        //        let updatetimersetdata = TimerSetData()
-    
-    
+
         if todoArray.count != orderArray.count && orderArray.count != 0{
             let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in}
@@ -166,15 +175,6 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                     realm.add(newTimerSetData)
                 }
             }
-            ///リストを使うことになったらここを復活させる
-            //                updatetimersetdata.order.removeAll() //TimeSetDataのtag=List<Tag>を全部消す
-            //                updatetimersetdata.todo.removeAll()
-            //                updatetimersetdata.time.removeAll()
-            //                updatetimersetdata.order.append(objectsIn: orderarray)
-            //                updatetimersetdata.time.append(objectsIn: timearray)
-            //                updatetimersetdata.todo.append(objectsIn: todoarray)
-            //                realm.add(updatetimersetdata)
-            //                print(updatetimersetdata)
         }
         //アラートを表示
         let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
