@@ -10,6 +10,7 @@ import UIKit
 class TimerCell: UITableViewCell {
     @IBOutlet weak var nextnumberlabel : UILabel!
     @IBOutlet weak var nexttimelabel: UILabel!
+    @IBOutlet weak var nexttodolabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

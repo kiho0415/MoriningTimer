@@ -44,6 +44,11 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         //cell.contenttextfield.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        table.rowHeight = 55 //Cellの高さを調節
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeArray.count + 1
     }

@@ -46,8 +46,8 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         table.dataSource = self
         table.delegate = self
         
-        startButton.layer.cornerRadius = 20
-        stopButton.layer.cornerRadius = 20
+        startButton.layer.cornerRadius = 40
+        stopButton.layer.cornerRadius = 40
         
 //        for i in 0...timerSetDataArray.count - 1{
 //            sum = sum + timerSetDataArray[i].time
@@ -69,13 +69,12 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! TimerCell
-        ///ここでfor分の繰り返し処理 配列の中身を全部表示する
-//        for arrayInNumber in 0...timerSetDataArray.count - 1 {
+
             cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + arrayInNumber + 1].order)
             timeCountNumber = timerSetDataArray[indexPath.row + arrayInNumber + 1].time
             timechange()
             cell.nexttimelabel?.text =  String(changedtime)
-//        }
+
         return cell
     }
     
@@ -129,7 +128,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             ///何もしない
         }
     }
-    
+   
     func timechange(){
         let second = timeCountNumber % 60
         let minute = (timeCountNumber - second) / 60
@@ -148,9 +147,10 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
 //    }
     
     func nexttimer(){
+        arrayInNumber = arrayInNumber + 1
+        
         if arrayInNumber < timerSetDataArray.count{
-            //まず表示
-            arrayInNumber = arrayInNumber + 1
+            localnotification()
             readyContentLabel.text = timerSetDataArray[arrayInNumber].order
             todoLabel.text = timerSetDataArray[arrayInNumber].todo
             timeCountNumbertop = timerSetDataArray[arrayInNumber].time
@@ -159,10 +159,9 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             table.reloadData()  //cellの個数がarrayInNumberで変化するからここで更新すれば変わる
             print(arrayInNumber)
             print(timerSetDataArray.count)
-            //したら配列から消しちゃう
-//            timerSetDataArray[0].delete
         } else {
             print("超えた")
+            timer.invalidate()
             let alert: UIAlertController = UIAlertController(title: "", message: "準備完了です。", preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(
@@ -179,29 +178,21 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             )
             present(alert, animated: true, completion: nil)
         }
-
     }
-
-    //ローカル通知まだいじりちゅう
+    
     func localnotification() {
-            // ローカル通知の内容
-            let content = UNMutableNotificationContent()
-            content.sound = UNNotificationSound.default
-            content.title = "お知らせ"
-//            content.subtitle = "タイマー通知"
-            content.body = "次の準備に移ってください"
-
-            // タイマーの時間（秒）をセット
-            let timer = 10
-            // ローカル通知リクエストを作成
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timer), repeats: false)
-            let identifier = NSUUID().uuidString
-            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request){ (error : Error?) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
+        // ローカル通知の内容
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = "お知らせ"
+        content.body = "次の準備に移ってください"
+        
+        let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request){ (error : Error?) in
+            if let error = error {
+                print(error.localizedDescription)
             }
         }
+    }
 
 }

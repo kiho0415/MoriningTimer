@@ -28,8 +28,8 @@ class ViewController: UIViewController {
             sumchange()
             pretimelabel.text = "前回のタイマー設定では、準備にかかる合計時間は\(changedsum)です。"
         }
-        startButton.layer.cornerRadius = 20
-        setButton.layer.cornerRadius = 20
+        startButton.layer.cornerRadius = 50
+        setButton.layer.cornerRadius = 50
     }
 
     @IBAction func timerstart(){
