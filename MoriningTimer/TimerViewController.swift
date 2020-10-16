@@ -22,8 +22,11 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     let realm = try! Realm()
 
     var timer:Timer = Timer()
+//    var sumTimer:Timer = Timer()
     var timeCountNumbertop: Int = 0
     var timeCountNumber: Int = 0
+    var sum: Int = 0
+    var changedsum: String = ""
    
     var changedtimetop = String()
     var changedtime = String()
@@ -45,6 +48,12 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         
         startButton.layer.cornerRadius = 20
         stopButton.layer.cornerRadius = 20
+        
+//        for i in 0...timerSetDataArray.count - 1{
+//            sum = sum + timerSetDataArray[i].time
+//        }
+//        timechange()
+//        tillArriveLabel.text = changedsum
         //必要な情報の表示　arrayInNumberは0
 //        orderarray.append(timerSetDataArray.order)
         readyContentLabel.text = timerSetDataArray[arrayInNumber].order
@@ -55,15 +64,15 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timerSetDataArray.count - 1
+        return timerSetDataArray.count - 1 - arrayInNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath) as! TimerCell
         ///ここでfor分の繰り返し処理 配列の中身を全部表示する
 //        for arrayInNumber in 0...timerSetDataArray.count - 1 {
-            cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + 1].order)
-            timeCountNumber = timerSetDataArray[indexPath.row + 1].time
+            cell.nextnumberlabel?.text = String(timerSetDataArray[indexPath.row + arrayInNumber + 1].order)
+            timeCountNumber = timerSetDataArray[indexPath.row + arrayInNumber + 1].time
             timechange()
             cell.nexttimelabel?.text =  String(changedtime)
 //        }
@@ -81,6 +90,17 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }
     }
     
+//    func startSumTimer() {
+//        if !sumTimer.isValid{
+//            sumTimer = Timer.scheduledTimer(
+//                timeInterval: 1,
+//                target: self,
+//                selector: #selector(self.sumcount),
+//                userInfo: nil,
+//                repeats: true)
+//        }
+//    }
+    
     @objc func count(){
         if timeCountNumbertop > 0 {
             timeCountNumbertop = timeCountNumbertop - 1
@@ -92,9 +112,15 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }
 
     }
+//    @objc func sumcount(){
+//        timeCountNumbertop = timeCountNumbertop - 1
+//        sumchange()
+//        tillArriveLabel.text = changedsum
+//    }
     
     @IBAction func start(){
-            startTimer()
+        startTimer()
+//        startSumTimer()
     }
     @IBAction func stop(){
         if timer.isValid{//一時停止
@@ -115,6 +141,12 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
         changedtimetop = String(format: "%02d:%02d", minute,second)
     }
     
+//    func sumchange(){
+//        let second = sum % 60
+//        let minute = (sum - second) / 60
+//        changedsum = String(format: "%02d:%02d", minute,second)
+//    }
+    
     func nexttimer(){
         if arrayInNumber < timerSetDataArray.count{
             //まず表示
@@ -124,9 +156,13 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
             timeCountNumbertop = timerSetDataArray[arrayInNumber].time
             timechangetop()
             tillEndLabel.text = changedtimetop
+            table.reloadData()  //cellの個数がarrayInNumberで変化するからここで更新すれば変わる
+            print(arrayInNumber)
+            print(timerSetDataArray.count)
             //したら配列から消しちゃう
 //            timerSetDataArray[0].delete
         } else {
+            print("超えた")
             let alert: UIAlertController = UIAlertController(title: "", message: "準備完了です。", preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(

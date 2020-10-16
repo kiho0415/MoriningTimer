@@ -23,9 +23,9 @@ class ViewController: UIViewController {
         
         if timerSetDataArray.count != 0{
             for i in 0...timerSetDataArray.count - 1{
-                sum = timerSetDataArray[i].time
+                sum = sum + timerSetDataArray[i].time
             }
-            timechange()
+            sumchange()
             pretimelabel.text = "前回のタイマー設定では、準備にかかる合計時間は\(changedsum)です。"
         }
         startButton.layer.cornerRadius = 20
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
 
     }
     
-    func timechange(){
+    func sumchange(){
         let second = sum % 60
         let minute = (sum - second) / 60
         changedsum = String(format: "%02d分%02d秒", minute,second)
