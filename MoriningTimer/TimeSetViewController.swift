@@ -55,11 +55,8 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeSetCell", for: indexPath) as! TimeSetCell
-        readynumber = indexPath.row + 1
+        readynumber = indexPath.row
         todocontent = cell.contentTextField.text!
-//        for i in 0...indexPath.row{
-//            todoArray.append(cell[indexPath.row].contentTextField.text)
-//        }
         cell.contentTextField.placeholder = "準備内容";
         if indexPath.row != timeArray.count{//最後以外のcell
             
@@ -67,7 +64,6 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
             cell.orderLabel.text = "準備\(readynumber)"
             cell.timeLabel.text = changedtime
         }
-        
         return cell
     }
     
@@ -91,18 +87,16 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     @IBAction func start(){
-        if timer.isValid{//一時停止
+        if timer.isValid{
           
-        }else{//タイマーを動かす
+        }else{
             startTimer()
         }
     }
     
     @IBAction func stop(){
-        if timer.isValid{//一時停止
+        if timer.isValid{
             timer.invalidate()
-        }else{//タイマーを動かす
-            
         }
     }
     
@@ -110,7 +104,6 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         if timer.isValid {//計測中
             timer.invalidate()
             timeCountNumber =  0
-            ///ここでタイマーの数字変わるようにしたい
         } else {//タイマー止まってるとき
             if timeArray == [] {//スタートの前にリセットを押す
                 ///何もしない
@@ -125,7 +118,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     @IBAction func next(){
         if timer.isValid {//計測中に次へ
             orderArray.append("準備\(readynumber)")
-            todoArray.append(todocontent)
+//            todoArray.append(todocontent)
             timeArray.append(timeCountNumber)
             timeCountNumber =  0
         } else {//タイマー止まってるときに次へ
@@ -133,7 +126,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 ///何もしない
             } else {
                 orderArray.append("準備\(readynumber)")
-                todoArray.append(todocontent)
+//                todoArray.append(todocontent)
                 timeArray.append(timeCountNumber)
                 timeCountNumber =  0
                 startTimer()
@@ -145,27 +138,27 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     
     @IBAction func save(){
-        if timer.isValid{
-            orderArray.append("準備\(readynumber)")
-            todoArray.append(todocontent)
-            timeArray.append(timeCountNumber)
-            timeCountNumber =  0
-            timer.invalidate()
-        }else{
-            orderArray.append("準備\(readynumber)")
-            todoArray.append(todocontent)
-            timeArray.append(timeCountNumber)
-        }
         print("saveおすと\(orderArray),\(todoArray),\(timeArray)")
 
         if todoArray.count != orderArray.count && orderArray.count != 0{
+            if timer.isValid{
+                timer.invalidate()
+            }
             let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in}
-            
-            )
-        )
-        present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in}))
+            present(alert, animated: true, completion: nil)
         } else {
+            if timer.isValid{
+                orderArray.append("準備\(readynumber)")
+                todoArray.append(todocontent)
+                timeArray.append(timeCountNumber)
+                timeCountNumber =  0
+                timer.invalidate()
+            }else{
+                orderArray.append("準備\(readynumber)")
+                todoArray.append(todocontent)
+                timeArray.append(timeCountNumber)
+            }
             //前回までのデータを消す
             try! realm.write(){
                 realm.deleteAll()
@@ -180,19 +173,18 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                     realm.add(newTimerSetData)
                 }
             }
+            //アラートを表示
+            let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    // 0.5秒後に実行したい処理
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }))
+            //アラートの表示
+            present(alert, animated: true, completion: nil)
         }
-        //アラートを表示
-        let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-            //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                // 0.5秒後に実行したい処理
-                self.navigationController?.popViewController(animated: true)
-            }
-        }))
-        //アラートの表示
-        present(alert, animated: true, completion: nil)
-    
     }
 }
 
