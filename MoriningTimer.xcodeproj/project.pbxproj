@@ -10,6 +10,7 @@
 		BD45097EA2331C0D6B13FFBB /* Pods_MoriningTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E1FD7AA1CCE855F2F9259F /* Pods_MoriningTimer.framework */; };
 		E48A558CFDCE525BF0C9F6C0 /* Pods_MoriningTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */; };
 		F6D5F68279A0740DB99496E9 /* Pods_MoriningTimer_MoriningTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F0EF68C3923D7AA03B35A /* Pods_MoriningTimer_MoriningTimerUITests.framework */; };
+		F9568ABA253ADC610094A756 /* スクリーンショット 2020-10-17 17.01.07.png in Resources */ = {isa = PBXBuildFile; fileRef = F9568AB9253ADC610094A756 /* スクリーンショット 2020-10-17 17.01.07.png */; };
 		F97D863A253352160058CED4 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D8638253352160058CED4 /* TimerCell.swift */; };
 		F97D863B253352160058CED4 /* TimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97D8639253352160058CED4 /* TimerCell.xib */; };
 		F97D867C25395CE70058CED4 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97D867B25395CE70058CED4 /* ColorViewController.swift */; };
@@ -53,6 +54,7 @@
 		9C54A55F5B4C3572AC9FE828 /* Pods_MoriningTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoriningTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C447CAAC76C5C15B9BACBED1 /* Pods-MoriningTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer/Pods-MoriningTimer.release.xcconfig"; sourceTree = "<group>"; };
 		E2FD8254CC5AB8EA08589BC3 /* Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-MoriningTimer-MoriningTimerUITests/Pods-MoriningTimer-MoriningTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F9568AB9253ADC610094A756 /* スクリーンショット 2020-10-17 17.01.07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2020-10-17 17.01.07.png"; sourceTree = "<group>"; };
 		F97D8638253352160058CED4 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		F97D8639253352160058CED4 /* TimerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerCell.xib; sourceTree = "<group>"; };
 		F97D867B25395CE70058CED4 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				F9C735552526F6F5007945C2 /* TimerViewController.swift */,
 				F97D8638253352160058CED4 /* TimerCell.swift */,
 				F97D8639253352160058CED4 /* TimerCell.xib */,
+				F9568AB9253ADC610094A756 /* スクリーンショット 2020-10-17 17.01.07.png */,
 				F9C7355A2526F7CF007945C2 /* TimeSetViewController.swift */,
 				F9C73595252A372D007945C2 /* TimeSetCell.swift */,
 				F9C73596252A372D007945C2 /* TimeSetCell.xib */,
@@ -305,6 +308,7 @@
 				F9C735212525CD8A007945C2 /* Assets.xcassets in Resources */,
 				F9C7351F2525CD86007945C2 /* Main.storyboard in Resources */,
 				F9C73598252A372D007945C2 /* TimeSetCell.xib in Resources */,
+				F9568ABA253ADC610094A756 /* スクリーンショット 2020-10-17 17.01.07.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
