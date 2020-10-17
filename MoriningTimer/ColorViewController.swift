@@ -13,7 +13,7 @@ class ColorViewController: UINavigationController {
         super.viewDidLoad()
         
        
-        navigationBar.barTintColor = #colorLiteral(red: 0.5211874247, green: 0.841455996, blue: 0.9686588645, alpha: 1)  //背景色
+        navigationBar.barTintColor = #colorLiteral(red: 0.6929637137, green: 0.8993118159, blue: 1, alpha: 1)  //背景色
         navigationBar.barStyle = .default //時計のとこ
         navigationBar.tintColor = .white //アイテムの色　（戻る　＜　とか　読み込みゲージとか）
         navigationBar.titleTextAttributes = [ //バーのテキスト

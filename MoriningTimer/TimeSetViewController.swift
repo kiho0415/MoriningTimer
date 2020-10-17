@@ -24,7 +24,7 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     var orderArray: [String] = []
     var todoArray: [String] = []
-    var timeArray = [Int]()  //時間形式に変更したのじゃないのを保存するためにint型にしてみた
+    var timeArray = [Int]() 
     
     let realm = try! Realm()
     let newTimerSetData = TimerSetData()
@@ -35,18 +35,16 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         table.dataSource = self
         table.delegate = self
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
         startButton.layer.cornerRadius = 20
         stopButton.layer.cornerRadius = 20
         resetButton.layer.cornerRadius = 20
         nextButton.layer.cornerRadius = 20
-
-        //cell.contenttextfield.delegate = self
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        table.rowHeight = 55 //Cellの高さを調節
+        table.rowHeight = 50 //Cellの高さを調節
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,14 +53,12 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeSetCell", for: indexPath) as! TimeSetCell
-        readynumber = indexPath.row
-        todocontent = cell.contentTextField.text!
-        cell.contentTextField.placeholder = "準備内容";
+        readynumber = indexPath.row + 1
+        cell.contentTextField.placeholder = "準備内容を入力"
         if indexPath.row != timeArray.count{//最後以外のcell
             
         }else{//最後のcell
             cell.orderLabel.text = "準備\(readynumber)"
-            cell.timeLabel.text = changedtime
         }
         return cell
     }
@@ -83,12 +79,13 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
         let second = timeCountNumber % 60
         let minute = (timeCountNumber - second) / 60
         changedtime = String(format: "%02d:%02d", minute,second)
-        self.table.reloadData()
+        let cell = table.cellForRow(at: IndexPath(row: readynumber - 1, section: 0)) as! TimeSetCell
+        cell.timeLabel.text = String(changedtime)
     }
     
     @IBAction func start(){
         if timer.isValid{
-          
+            
         }else{
             startTimer()
         }
@@ -117,17 +114,15 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     @IBAction func next(){
         if timer.isValid {//計測中に次へ
-            orderArray.append("準備\(readynumber)")
-//            todoArray.append(todocontent)
-            timeArray.append(timeCountNumber)
+            appendarray()
+            //            appendtodoarray()
             timeCountNumber =  0
         } else {//タイマー止まってるときに次へ
             if timeArray == [] {//スタートの前にリセットを押す
                 ///何もしない
             } else {
-                orderArray.append("準備\(readynumber)")
-//                todoArray.append(todocontent)
-                timeArray.append(timeCountNumber)
+                appendarray()
+                //                appendtodoarray()
                 timeCountNumber =  0
                 startTimer()
             }
@@ -138,53 +133,49 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     
     
     @IBAction func save(){
-        print("saveおすと\(orderArray),\(todoArray),\(timeArray)")
-
-        if todoArray.count != orderArray.count && orderArray.count != 0{
-            if timer.isValid{
-                timer.invalidate()
-            }
-            let alert: UIAlertController = UIAlertController(title: "", message: "準備の内容を登録してください。", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in}))
-            present(alert, animated: true, completion: nil)
-        } else {
-            if timer.isValid{
-                orderArray.append("準備\(readynumber)")
-                todoArray.append(todocontent)
-                timeArray.append(timeCountNumber)
-                timeCountNumber =  0
-                timer.invalidate()
-            }else{
-                orderArray.append("準備\(readynumber)")
-                todoArray.append(todocontent)
-                timeArray.append(timeCountNumber)
-            }
-            //前回までのデータを消す
+        if timer.isValid{
+            appendarray()
+            appendtodoarray()
+            timeCountNumber =  0
+            timer.invalidate()
+        }else{
+            appendarray()
+            appendtodoarray()
+        }
+        try! realm.write(){
+            realm.deleteAll() //前回までのデータを消す
+        }
+        for i in 0...timeArray.count - 1 {
+            let newTimerSetData = TimerSetData()
+            newTimerSetData.order = orderArray[i]
+            newTimerSetData.todo = todoArray[i]
+            newTimerSetData.time = timeArray[i]
             try! realm.write(){
-                realm.deleteAll()
+                realm.add(newTimerSetData)
             }
-
-            for i in 0...timeArray.count - 1 {
-                let newTimerSetData = TimerSetData()
-                newTimerSetData.order = orderArray[i]
-                newTimerSetData.todo = todoArray[i]
-                newTimerSetData.time = timeArray[i]
-                try! realm.write(){
-                    realm.add(newTimerSetData)
-                }
+        }
+        let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {//アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移
+                self.navigationController?.popViewController(animated: true)
             }
-            //アラートを表示
-            let alert: UIAlertController = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                //アラートが消えるのと画面遷移が重ならないように0.5秒後に画面遷移するようにしてる
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    // 0.5秒後に実行したい処理
-                    self.navigationController?.popViewController(animated: true)
-                }
-            }))
-            //アラートの表示
-            present(alert, animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+        print("saveおすと\(orderArray),\(todoArray),\(timeArray)")
+    }
+    
+    func appendarray(){
+        orderArray.append("準備\(readynumber)")
+        timeArray.append(timeCountNumber)
+    }
+    func appendtodoarray(){
+        for i in 0...readynumber - 1{
+            let cell = table.cellForRow(at: IndexPath(row: i, section: 0)) as! TimeSetCell
+            let text = cell.contentTextField.text
+            let todocontent = text
+            todoArray.insert(todocontent!, at: i)
         }
     }
+ 
 }
 

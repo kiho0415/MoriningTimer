@@ -20,16 +20,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        pretimelabel.text = "測定結果がありません。先に測定してください。"
+        startButton.layer.cornerRadius = 50
+        setButton.layer.cornerRadius = 50
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        sum = 0
         if timerSetDataArray.count != 0{
             for i in 0...timerSetDataArray.count - 1{
                 sum = sum + timerSetDataArray[i].time
             }
             sumchange()
-            pretimelabel.text = "前回のタイマー設定では、準備にかかる合計時間は\(changedsum)です。"
+            pretimelabel.text = "前回の測定では、準備にかかる合計時間は\(changedsum)でした。"
+        } else {
+            pretimelabel.text = "測定結果がありません。"
         }
-        startButton.layer.cornerRadius = 50
-        setButton.layer.cornerRadius = 50
     }
 
     @IBAction func timerstart(){
@@ -46,7 +52,7 @@ class ViewController: UIViewController {
             )
             present(alert, animated: true, completion: nil)
         }else{
-            let alert: UIAlertController = UIAlertController(title: "", message: "前回の計測を元に準備タイマーを開始します。", preferredStyle: .alert)
+            let alert: UIAlertController = UIAlertController(title: "タイマーを開始", message: "次の準備に移るタイミングを通知でお知らせします。", preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(
                     title: "OK",

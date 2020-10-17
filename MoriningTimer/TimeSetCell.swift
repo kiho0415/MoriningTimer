@@ -7,19 +7,23 @@
 
 import UIKit
 
-class TimeSetCell: UITableViewCell {
+class TimeSetCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet var orderLabel: UILabel!
     @IBOutlet var contentTextField: UITextField!
     @IBOutlet var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentTextField.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
     }
     
 }
