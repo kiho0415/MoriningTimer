@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         pretimelabel.text = "測定結果がありません。先に測定してください。"
         startButton.layer.cornerRadius = 50
         setButton.layer.cornerRadius = 50
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func timerstart(){
-        if timerSetDataArray[0].order == "" {
+        if timerSetDataArray.count == 0 {
             let alert: UIAlertController = UIAlertController(title: "", message: "測定結果がありません。先に測定を行ってください。", preferredStyle: .alert)
             alert.addAction(
                 UIAlertAction(
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
                     title: "OK",
                     style: .default,
                     handler: { action in
+                        self.performSegue(withIdentifier: "totimer", sender: nil)
                     }
                 )
             )

@@ -21,9 +21,12 @@ class TimeSetCell: UITableViewCell,UITextFieldDelegate {
         super.setSelected(selected, animated: animated)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
+    @IBAction func getText(sender : UITextField) {
+       
     }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//            textField.resignFirstResponder()
+//            return true
+//    }
     
 }
