@@ -108,7 +108,8 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
                 timeCountNumber = 0
             }
         }
-        self.table.reloadData()
+        let cell = table.cellForRow(at: IndexPath(row: timeArray.count, section: 0)) as! TimeSetCell
+        cell.timeLabel.text = "00:00"
         print("resetおすと\(orderArray),\(todoArray),\(timeArray)")
     }
     
@@ -165,8 +166,9 @@ class TimeSetViewController: UIViewController,UITableViewDataSource, UITableView
     }
     
     func appendarray(){
-        orderArray.append("準備\(readynumber)")
-        timeArray.append(timeCountNumber)
+            orderArray.append("準備\(readynumber)")
+            timeArray.append(timeCountNumber)
+      
     }
     func appendtodoarray(){
         for i in 0...readynumber - 1{

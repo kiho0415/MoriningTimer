@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet var pretimelabel: UILabel!
     @IBOutlet var startButton: UIButton!
@@ -47,32 +47,30 @@ class ViewController: UIViewController {
                     title: "OK",
                     style: .default,
                     handler: { action in
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                )
-            )
+                        self.dismiss(animated: true, completion: nil) }))
             present(alert, animated: true, completion: nil)
         }else{
-            let alert: UIAlertController = UIAlertController(title: "タイマーを開始", message: "次の準備に移るタイミングを通知でお知らせします。", preferredStyle: .alert)
-            alert.addAction(
-                UIAlertAction(
-                    title: "OK",
-                    style: .default,
-                    handler: { action in
-                        self.performSegue(withIdentifier: "totimer", sender: nil)
-                    }
-                )
-            )
-            alert.addAction(
-                UIAlertAction(
-                    title: "キャンセル",
-                    style: .cancel,
-                    handler: { action in
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                )
-            )
-            present(alert, animated: true, completion: nil)
+//            if #available(iOS 10.0, *) {
+//                // iOS 10
+//                let center = UNUserNotificationCenter.current()
+//                center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
+//                    if error != nil {
+//                        return
+//                    }
+//                    if granted {
+//                        print("通知許可")
+//                        let center = UNUserNotificationCenter.current()
+//                        center.delegate = self
+//                    } else {
+//                        print("通知拒否")
+//                    }
+//                })
+//            } else {
+//                // iOS 9以下
+//                let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+//                UIApplication.shared.registerUserNotificationSettings(settings)
+//            }
+            self.performSegue(withIdentifier: "totimer", sender: nil)
         }
     }
     @IBAction func timeset(){

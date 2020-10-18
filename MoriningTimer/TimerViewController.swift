@@ -105,8 +105,7 @@ class TimerViewController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBAction func stop(){
         if timer.isValid{
             timer.invalidate()
-        }
-    }
+        }    }
     
     func timechange(){
         let second = timeCountNumber % 60
